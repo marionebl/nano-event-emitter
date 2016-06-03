@@ -7,7 +7,7 @@
   "scripts": {
     "build": "babel ./src --out-dir ./lib --source-maps",
     "commit": "git-cz",
-    "push": "npm run reset && npm run build && git push --follow-tags origin master && conventional-github-releaser -p angular && npm publish",
+    "push": "npm run reset && npm run build && git push --follow-tags origin master && npm pack && hub release create -a \"./$npm_package_name-$npm_package_version.tgz\" -m \"$(conventional-changelog -p angular -r2)\" \"v$npm_package_version\" && npm publish",
     "release": "npm run test && standard-version",
     "reset": "rimraf ./lib",
     "start": "npm run test && npm run watch",
@@ -38,6 +38,7 @@
     "babel-cli": "^6.9.0",
     "babel-plugin-transform-runtime": "^6.9.0",
     "commitizen": "^2.8.2",
+    "conventional-changelog-cli": "^1.2.0",
     "conventional-changelog-lint": "^0.3.4",
     "conventional-github-releaser": "^1.1.2",
     "cz-conventional-changelog-lint": "^0.1.3",
