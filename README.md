@@ -57,22 +57,20 @@ Available from CDN:
 
 ### NanoEventEmitter
 
-[src/index.js:19-155](https://github.com/marionebl/nano-event-emitter/blob/fdea48176a882258e66903f3abd93b0dd8d9d72e/src/index.js#L19-L155 "Source code on GitHub")
+[src/index.js:17-147](https://github.com/marionebl/nano-event-emitter/blob/bd945b1ba41a347fac7cc253fa1aa1d246166f4a/src/index.js#L17-L147 "Source code on GitHub")
 
 An EventEmitter
 
 **Examples**
 
-````javascript
-    ```js
-    import NanoEventEmitter from 'nano-event-emitter';
-    const eventEmitter = new NanoEventEmitter();
-    ```
-````
+```javascript
+import NanoEventEmitter from 'nano-event-emitter';
+const eventEmitter = new NanoEventEmitter();
+```
 
 #### on
 
-[src/index.js:68-79](https://github.com/marionebl/nano-event-emitter/blob/fdea48176a882258e66903f3abd93b0dd8d9d72e/src/index.js#L68-L79 "Source code on GitHub")
+[src/index.js:62-73](https://github.com/marionebl/nano-event-emitter/blob/bd945b1ba41a347fac7cc253fa1aa1d246166f4a/src/index.js#L62-L73 "Source code on GitHub")
 
 Attach an observer for one or more eventNames.
 
@@ -83,31 +81,29 @@ Attach an observer for one or more eventNames.
 
 **Examples**
 
-````javascript
-    ```js
-    import NanoEventEmitter from 'nano-event-emitter';
-    const eventEmitter = NanoEventEmitter.create();
+```javascript
+import NanoEventEmitter from 'nano-event-emitter';
+const eventEmitter = NanoEventEmitter.create();
 
-    eventEmitter.on('event', () => { console.log('event'); });
-    eventEmitter.on('more-event', () => { console.log('more-event'); });
-    eventEmitter.on(['even', 'more', 'events'], () => { console.log('even more events'); });
+eventEmitter.on('event', () => { console.log('event'); });
+eventEmitter.on('more-event', () => { console.log('more-event'); });
+eventEmitter.on(['even', 'more', 'events'], () => { console.log('even more events'); });
 
-    eventEmitter.emit(['event', 'more-event']);
-    // console: event
-    // console: more-event
+eventEmitter.emit(['event', 'more-event']);
+// console: event
+// console: more-event
 
-    eventEmitter.emit('even more events');
-    // console: even more events
-    // console: even more events
-    // console: even more events
-    ```
-````
+eventEmitter.emit('even more events');
+// console: even more events
+// console: even more events
+// console: even more events
+```
 
 Returns **this** 
 
 #### off
 
-[src/index.js:113-134](https://github.com/marionebl/nano-event-emitter/blob/fdea48176a882258e66903f3abd93b0dd8d9d72e/src/index.js#L113-L134 "Source code on GitHub")
+[src/index.js:105-126](https://github.com/marionebl/nano-event-emitter/blob/bd945b1ba41a347fac7cc253fa1aa1d246166f4a/src/index.js#L105-L126 "Source code on GitHub")
 
 Detach an observer for one or more eventNames.
 
@@ -118,37 +114,35 @@ Detach an observer for one or more eventNames.
 
 **Examples**
 
-````javascript
-    ```js
-    import NanoEventEmitter from 'nano-event-emitter';
-    const eventEmitter = NanoEventEmitter.create();
+```javascript
+import NanoEventEmitter from 'nano-event-emitter';
+const eventEmitter = NanoEventEmitter.create();
 
-    const yetAnotherObserver = () => console.log('yet-another-observer');
+const yetAnotherObserver = () => console.log('yet-another-observer');
 
-    eventEmitter.on('yet-another-event', () => { console.log('yet-another-event'); });
-    eventEmitter.on('yet-another-event', () => { console.log('yet-another-event'); });
-    eventEmitter.on('yet-another-event', yetAnotherObserver);
+eventEmitter.on('yet-another-event', () => { console.log('yet-another-event'); });
+eventEmitter.on('yet-another-event', () => { console.log('yet-another-event'); });
+eventEmitter.on('yet-another-event', yetAnotherObserver);
 
-    eventEmitter.emit(['yet-another-event']);
-    // console: yet-another-event
-    // console: yet-another-event
-    // console: yet-another-observer
+eventEmitter.emit(['yet-another-event']);
+// console: yet-another-event
+// console: yet-another-event
+// console: yet-another-observer
 
-    eventEmitter.off('yet-another-event', yetAnotherObserver);
-    eventEmitter.emit('yet-another-event');
-    // console: yet-another-event
-    // console: yet-another-event
+eventEmitter.off('yet-another-event', yetAnotherObserver);
+eventEmitter.emit('yet-another-event');
+// console: yet-another-event
+// console: yet-another-event
 
-    eventEmitter.off('yet-another-event');
-    eventEmitter.emit('yet-another-event');
-    ```
-````
+eventEmitter.off('yet-another-event');
+eventEmitter.emit('yet-another-event');
+```
 
 Returns **this** 
 
 #### emit
 
-[src/index.js:143-154](https://github.com/marionebl/nano-event-emitter/blob/fdea48176a882258e66903f3abd93b0dd8d9d72e/src/index.js#L143-L154 "Source code on GitHub")
+[src/index.js:135-146](https://github.com/marionebl/nano-event-emitter/blob/bd945b1ba41a347fac7cc253fa1aa1d246166f4a/src/index.js#L135-L146 "Source code on GitHub")
 
 Emit one or more events, invoking registered observers with optional args
 
@@ -161,7 +155,7 @@ Returns **this**
 
 #### create
 
-[src/index.js:38-40](https://github.com/marionebl/nano-event-emitter/blob/fdea48176a882258e66903f3abd93b0dd8d9d72e/src/index.js#L38-L40 "Source code on GitHub")
+[src/index.js:34-36](https://github.com/marionebl/nano-event-emitter/blob/bd945b1ba41a347fac7cc253fa1aa1d246166f4a/src/index.js#L34-L36 "Source code on GitHub")
 
 Create a NanoEventEmitter instance.
 
@@ -171,11 +165,9 @@ Create a NanoEventEmitter instance.
 
 **Examples**
 
-````javascript
-    ```js
-    import NanoEventEmitter from 'nano-event-emitter';
-    const eventEmitter = NanoEventEmitter.create();
-    ```
-````
+```javascript
+import NanoEventEmitter from 'nano-event-emitter';
+const eventEmitter = NanoEventEmitter.create();
+```
 
 Returns **** NanoEventEmitter

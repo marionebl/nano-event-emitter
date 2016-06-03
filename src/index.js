@@ -11,10 +11,8 @@
  *
  *
  * @example
- * ```js
  * import NanoEventEmitter from 'nano-event-emitter';
  * const eventEmitter = new NanoEventEmitter();
- * ```
  */
 class NanoEventEmitter {
 	/**
@@ -30,10 +28,8 @@ class NanoEventEmitter {
 	 * @return NanoEventEmitter
 	 *
 	 * @example
-	 * ```js
 	 * import NanoEventEmitter from 'nano-event-emitter';
 	 * const eventEmitter = NanoEventEmitter.create();
-	 * ```
 	 */
 	static create(...args) {
 		return new NanoEventEmitter(...args);
@@ -47,7 +43,6 @@ class NanoEventEmitter {
 	 * @return {this}
 	 *
 	 * @example
-	 * ```js
 	 * import NanoEventEmitter from 'nano-event-emitter';
 	 * const eventEmitter = NanoEventEmitter.create();
 	 *
@@ -63,7 +58,6 @@ class NanoEventEmitter {
 	 * // console: even more events
 	 * // console: even more events
 	 * // console: even more events
-	 * ```
 	 */
 	on(eventNames, observer) {
 		const events = Array.isArray(eventNames) ?
@@ -86,7 +80,6 @@ class NanoEventEmitter {
 	 * @return {this}
 	 *
 	 * @example
-	 * ```js
 	 * import NanoEventEmitter from 'nano-event-emitter';
 	 * const eventEmitter = NanoEventEmitter.create();
 	 *
@@ -108,7 +101,6 @@ class NanoEventEmitter {
 	 *
 	 * eventEmitter.off('yet-another-event');
 	 * eventEmitter.emit('yet-another-event');
-	 * ```
 	 */
 	off(eventNames, observer) {
 		const events = Array.isArray(eventNames) ?
